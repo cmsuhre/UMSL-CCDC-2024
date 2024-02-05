@@ -1,0 +1,54 @@
+
+https://kb.iweb.com/hc/en-us/articles/230267488--Increasing-Linux-server-security-with-nodev-nosuid-and-no-exec-options
+
+Add nodev, nosuid, and noexec options to /tmp:
+1. Edit the file /etc/fstab, enter:
+vi /etc/fstab
+2. Locate the /tmp line:
+
+UUID=0aef28b9-3d11-4ab4-a0d4-d53d7b4d3aa4 /tmp                    ext4    defaults        1 2
+3. Append the text ,nodev,nosuid,noexec to the list of mount options in column
+
+4. The entry should look like  this:
+
+UUID=0aef28b9-3d11-4ab4-a0d4-d53d7b4d3aa4 /tmp                    ext4    defaults,nodev,nosuid,noexec        1 2
+5. Save and close the file.
+
+Add nodev, nosuid, and noexec options to /dev/shm
+
+1. Edit the file /etc/fstab, enter:
+vi /etc/fstab
+2. Locate the /dev/shm line:
+
+tmpfs                   /dev/shm                tmpfs   defaults        0 0
+3. Append the text ,nodev,nosuid,noexec to the list of mount options in column
+
+4. The entry should look like this:
+
+tmpfs                   /dev/shm                tmpfs   defaults,nodev,nosuid,noexec        0 0
+5. Save and close the file.
+
+About /var/tmp
+
+Make sure you bind /var/tmp to /tmp:
+
+1. Edit the file /etc/fstab, enter:
+vi /etc/fstab
+2. Append the following line:
+
+/tmp /var/tmp none rw,noexec,nosuid,nodev,bind 0 0
+3. Save and close the file.
+
+Set nodev, nosuid, and noexec options without rebooting the Linux server
+
+1. Type the following command as root user:
+
+ # Bind /var/tmp to /tmp
+ mount -o rw,noexec,nosuid,nodev,bind /tmp/ /var/tmp/
+ # Remount /tmp
+ mount -o remount,noexec,nosuid,nodev /tmp
+ # Remount /dev/shm
+ mount -o remount,noexec,nosuid,nodev /dev/shm
+2. Verify new settings:
+ mount | egrep --color -w '^(tmpfs|/tmp)|/tmp'
+
