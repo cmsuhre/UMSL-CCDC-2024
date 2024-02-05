@@ -1,0 +1,10 @@
+Syslog-/var/log/message
+
+DOVECOT LOGGING-
+/var/log/maillog
+
+Apache Logs
+/var/log/httpd
+
+RKunter logs
+/var/log/rkhunter/rkhunter.log

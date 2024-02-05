@@ -1,0 +1,8 @@
+#Windows 2008 R2 Server 
+
+1. Check for extra user accounts
+**dsquery group** will list all groups in AD
+
+2. Run Nmap ad NSE Nmap scripts to discover vulnerbailities and ect
+
+3. Check users that login and block any extra user accounts

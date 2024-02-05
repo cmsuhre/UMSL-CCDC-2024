@@ -1,0 +1,11 @@
+Local internet domain: frog.com
+
+networks: 10.0.0.8/24, 172.16.0.0/12, 182.168.0.0/16
+
+Mailbox: Maildir/
+
+AD:
+ad.frog.com
+port: 389: 
+version: 3
+bindpw: !Password123

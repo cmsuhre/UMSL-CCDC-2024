@@ -1,0 +1,57 @@
+#Checklist
+
+1. Change password and show all admins
+
+CLI commands:  set password
+  or in GUI it is in Administrators > Admin
+  
+ There are two users: admin and administrator
+  Best way to change the password is: 
+    >configure
+    #set mgt-config users admin password
+    #set mgt-config users administrator password
+    #commit
+    #exit
+
+2. Updating the PanOS: takes 5 to 10 minutes. 8.1.15 MAX
+    >debug swm info  - gives the available versions
+    >request system software download version 8.1.x
+    >request system software install version 8.1.x
+    >request restart system (Mandatory)
+
+3. Logging issues ?
+
+4. Start disabling the services that are not at all required:
+    > Like snmp, telnet, smb, etc
+
+5. Cheat Sheet to secure the Web Interface
+
+6. Write the rules quickly, or use the Web Interface for faster rule commits.
+
+7. Move the deny all rule to bottom, As the rule execution is from top to bottom.
+
+7. Enable User identification in each zone. (Network>Zones)
+
+8. Device>Dynamic Updates:  Set to auto update and install for every 30 mins.
+
+9. Enable DoS Protection
+
+10. Rules with palo Alto application pretection with all any and action allow.
+
+11. Follow all the rule dependency warnings, and make sure whether they need to be enabled.
+
+12. Any questions, Open Resources. Else, Delete the rule bloking that service. and re-write it with dependencies. Still doesn't work? Remove it completely and monitor the traffic on that service.
+
+
+
+
+2. Make sure routes are avaliable and properly configured
+3. Show current configuration - enter connfiguration mode, show 
+4. Check current security policy rules
+3. Disable Telnet - set deviceconfig system service disable-telnet yes
+4. Disable snmp - set deviceconfig system service disable-telnet yes
+5. Set rulebase security rules: Format: 
+6. from any source any source-region any to any destination any destination-region none user any category any application http https 
+7. Move security rule to be done first : moverulebase security rules 'Test1' top
+
+

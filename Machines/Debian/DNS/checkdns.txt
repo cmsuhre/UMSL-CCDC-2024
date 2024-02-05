@@ -1,0 +1,25 @@
+1. check internet connection
+ping 8.8.8.8
+If destination is unreachable check if your gateway 10.0.2.2 is reachable. And fix the problem.
+
+if connection is fine you would see something like :
+
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=46 time=4.13 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=46 time=4.13 ms
+
+
+2. Check if host/dig send packets properly:
+sudo tcpdump -n -i en0  host 8.8.8.8   
+
+
+
+3. At the same time from another console in the same machine
+dig @8.8.8.8 www.google.com
+You will get response similar to:
+
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes
+13:34:00.980550 IP 10.0.2.15.56570 > 8.8.8.8.53: 47059+ A? google.com. (27)
+13:34:05.980541 IP 10.0.2.15.56570 > 8.8.8.8.53: 47059+ A? google.com. (27)
+This means that the request had pass to the external network but did not come back...

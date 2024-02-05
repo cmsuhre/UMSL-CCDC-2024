@@ -1,0 +1,3 @@
+netstat -na | findstr LISTENING > Openports.txt
+
+Will show all listening ports

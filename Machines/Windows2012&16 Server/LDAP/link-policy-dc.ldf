@@ -1,0 +1,5 @@
+dn: CN=NTDS  
+Settings,CN=DC1,CN=Servers,CN=site1,CN=Sites,CN=Configuration, DC=X  
+changetype: modify  
+add: queryPolicyobject  
+queryPolicyobject: CN=Extended Timeout,CN=Query-Policies,CN=Directory Service,CN=Windows NT,CN=Services,CN=Configuration,DC=X

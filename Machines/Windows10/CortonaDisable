@@ -1,0 +1,17 @@
+Disable Cortana Service
+
+Start Menu > Services > Windows Search
+Disable service
+Stop Service
+Apply
+
+Disable Cortana Registry
+
+Start Menu > Regedit.exe
+KEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search
+Create DWORD Value "AllowCortana" = 0
+
+Block Search/Cortana at F/W
+
+Start Menu > Windows Defender Firewall with Advanced Security > Inbound Rules
+Block Cortana and Windows Shell Experience

@@ -1,0 +1,8 @@
+
+Enable DHCP server logging: 
+reg  add HKLM\System\CurrentControlSet\Services\DhcpServer\Pa rameters /v  ActivityLogFlag /t  REG_DWORD /d  1 
+
+Default Location Windows 2003/2008/2012: 
+C:\> %windir%\System32\Dhcp 
+
+

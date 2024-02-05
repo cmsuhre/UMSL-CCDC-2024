@@ -1,0 +1,39 @@
+https://docs.microsoft.com/en-us/powershell/module/dnsserver/set-dnsservercache?view=windowsserver2022-ps
+
+   #set maxium cache value
+   Set-DnsServerCache -MaxKBSize 10240 -ComputerName "Win12S-05.DNSServer-01.Contoso.com"
+   
+   #setTTL
+   Set-DnsServerCache -MaxTTL 02.00:00:00 -MaxNegativeTtl 00.00:20:00
+   
+   INFO:
+
+Set-DnsServerCache
+   [-StoreEmptyAuthenticationResponse <Boolean>]
+   [-MaxKBSize <UInt32>]
+   [-PollutionProtection <Boolean>]
+   [-ComputerName <String>]
+   [-LockingPercent <UInt32>]
+   [-MaxNegativeTtl <TimeSpan>]
+   [-MaxTtl <TimeSpan>]
+   [-PassThru]
+   [-IgnorePolicies <Boolean>]
+   [-CimSession <CimSession[]>]
+   [-ThrottleLimit <Int32>]
+   [-AsJob]
+   [-WhatIf]
+   [-Confirm]
+   [<CommonParameters>]
+   
+   
+ -LockingPercent
+Specifies a percentage of the original Time to Live (TTL) value that caching can consume.
+
+Cache locking is configured as a percent value. For example, if the cache locking value is set to 50, the DNS server does not overwrite a cached entry for half of the duration of the TTL. By default, the cache locking percent value is 100. This value means that the DNS server will not overwrite cached entries for the entire duration of the TTL.
+
+TABLE 6
+Type:	UInt32
+Position:	Named
+Default value:	None
+Accept pipeline input:	True
+Accept wildcard characters:	False

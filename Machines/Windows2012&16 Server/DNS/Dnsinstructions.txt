@@ -1,0 +1,5 @@
+Default location of  enhanced DNS  Windows 2012 R2: 
+C:\> %SystemRoot%\System32\Winevt\Logs\Microsoft-Windows-DNSServer%4Analytical.etl 
+
+Enable DNS Logging:
+C:\> DNSCmd <DNS SERVER NAME> /config /logLevel 0x8100F331 

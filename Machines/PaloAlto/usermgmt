@@ -1,0 +1,41 @@
+Symptom
+Perform the following actions via the PAN-OS CLI:
+Create Users
+Assign Roles
+Change Passwords
+
+
+Environment
+Any PAN-OS
+Palo Alto Firewall.
+
+
+Resolution
+Creating/Adding Users
+
+Log in to the CLI
+Go into configure mode:
+> configure
+Create/Add a management user and assign a password
+# set mgt-config users <name> password
+
+Note: If the <name> does not exist, then the user will be created.
+Set the role for the specified user
+# set mgt-config users <name> permissions role-based <role profile>
+custom
+deviceadmin
+devicereader
+superreader
+superuser
+Commit and then exit the configuration mode.
+# commit
+# exit
+To Change the password for a user
+Go into configure mode:
+> configure
+Enter the new password that will override the existing one:
+# set mgt-config users admin password
+Commit and exit the configuration mode.
+# commit
+# exit
+

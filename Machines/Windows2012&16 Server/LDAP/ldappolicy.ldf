@@ -1,0 +1,17 @@
+dn: CN=Extended Timeout,CN=Query-Policies,CN=Directory Service,CN=Windows NT,CN=Services,CN=Configuration,DC=X  
+changetype: add  
+instanceType: 4  
+#lDAPAdminLimits: MaxReceiveBuffer=10485760  
+#lDAPAdminLimits: MaxDatagramRecv=1024  
+#lDAPAdminLimits: MaxPoolThreads=4  
+#lDAPAdminLimits: MaxResultSetSize=262144  
+#lDAPAdminLimits: MaxTempTableSize=10000  
+#lDAPAdminLimits: MaxQueryDuration=300  
+#lDAPAdminLimits: MaxPageSize=1000  
+#lDAPAdminLimits: MaxNotificationPerConn=5  
+#lDAPAdminLimits: MaxActiveQueries=20  
+#lDAPAdminLimits: MaxConnIdleTime=900  
+#lDAPAdminLimits: InitRecvTimeout=120  
+#lDAPAdminLimits: MaxConnections=5000  
+objectClass: queryPolicy  
+showInAdvancedViewOnly: TRUE
