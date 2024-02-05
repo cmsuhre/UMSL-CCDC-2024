@@ -1,0 +1,5 @@
+Start DNS logging: 
+rndc querylog 
+
+View DNS logs:
+tail -f  /var/log/messages I  grep named 

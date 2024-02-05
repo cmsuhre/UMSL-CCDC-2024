@@ -1,0 +1,11 @@
+Check is ssh is running:
+ps aux | grep sshd
+
+check if the process sshd is listening on port 22:
+netstat -plant | grep :22
+
+use the lsof command to check if the port 22 TCP file is open:
+lsof -i
+
+try to telnet to port 22:
+telnet localhost 22

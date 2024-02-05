@@ -1,0 +1,5 @@
+View DHCP lease logs: 
+grep -Ei  'dhcp' /var/log/syslog.1 
+
+Ubuntu DHCP logs: 
+tail -f  dhcpd. log 
